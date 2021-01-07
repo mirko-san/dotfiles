@@ -1,0 +1,71 @@
+{
+  "editor.fontFamily": "Ricty Diminished Discord, Menlo, Monaco, 'Courier New', monospace",
+  "editor.renderWhitespace": "all",
+  "editor.wordWrap": "on",
+  "editor.suggestSelection": "first",
+  "editor.fontLigatures": false,
+  "editor.fontSize": 12,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.tabCompletion": "onlySnippets",
+  "editor.quickSuggestions": true,
+  "editor.tabSize": 2,
+  "explorer.confirmDelete": false,
+  "files.eol": "\n",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "todohighlight.isCaseSensitive": true,
+  "todohighlight.keywords": [
+    "DEBUG:",
+    "REVIEW:",
+    {
+      "text": "NOTE:",
+      "color": "#ff0000",
+      "backgroundColor": "yellow",
+      "overviewRulerColor": "grey"
+    },
+    {
+      "text": "XXX",
+      "color": "#ff0000",
+      "backgroundColor": "yellow",
+      "overviewRulerColor": "grey"
+    },
+    {
+      "text": "HACK:",
+      "color": "#000",
+      "isWholeLine": false,
+    },
+    {
+      "text": "TODO:",
+      "color": "red",
+      "border": "1px solid red",
+      "borderRadius": "2px", //NOTE: using borderRadius along with `border` or you will see nothing change
+      "backgroundColor": "rgba(0,0,0,.2)",
+      //other styling properties goes here ... 
+    }
+  ],
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.insertFinalNewline": true,
+  "window.zoomLevel": 0,
+  "javascript.suggest.autoImports": false,
+  "typescript.suggest.autoImports": false,
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
+  },
+  // ファイルを Preview mode で開かないようにする。 false でタブが上書きされない。
+  // "workbench.editor.enablePreview": false,
+  "tabnine.experimentalAutoImports": true,
+}
