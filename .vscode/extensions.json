@@ -21,7 +21,8 @@
     "octref.vetur",
     "visualstudioexptteam.vscodeintellicode",
     "redhat.vscode-yaml",
-    "mosapride.zenkaku"
+    "mosapride.zenkaku",
+    "oderwat.indent-rainbow"
   ],
   // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
   "unwantedRecommendations": []
