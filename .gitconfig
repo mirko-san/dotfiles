@@ -10,3 +10,6 @@
 
 [init]
   defaultBranch = main
+
+[alias]
+  push-f = push --force-with-lease
