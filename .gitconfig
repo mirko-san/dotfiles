@@ -13,3 +13,6 @@
 
 [alias]
   push-f = push --force-with-lease
+
+[include]
+  path = ~/.gitconfig.work
