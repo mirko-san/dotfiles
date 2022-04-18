@@ -13,4 +13,4 @@ fi
 # Then, source plugins and add commands to $PATH
 zplug load --verbose
 
-prompt steeef
+prompt giddie
