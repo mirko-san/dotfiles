@@ -1,8 +1,12 @@
-source ~/.zplug/init.zsh
+source $ZPLUG_HOME/init.zsh
 
-zplug "modules/prompt", from:prezto
 zplug 'asdf-vm/asdf'
 
+zplug "zsh-users/zsh-completions"
+# 入力途中に候補をうっすら表示
+zplug "zsh-users/zsh-autosuggestions"
+# コマンドを種類ごとに色付け
+zplug "zsh-users/zsh-syntax-highlighting"
 zplug "atusy/gh-fzf"
 
 # Install plugins if there are plugins that have not been installed
@@ -15,8 +19,6 @@ fi
 
 # Then, source plugins and add commands to $PATH
 zplug load --verbose
-
-prompt giddie
 
 source $ZPLUG_REPOS/asdf-vm/asdf/asdf.sh
 source $ZPLUG_REPOS/asdf-vm/asdf/completions/asdf.bash
@@ -31,3 +33,4 @@ if [ -d $ZSHHOME -a -r $ZSHHOME -a -x $ZSHHOME ]; then
     done
 fi
 
+eval "$(starship init zsh)"
