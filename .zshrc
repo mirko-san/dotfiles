@@ -3,6 +3,8 @@ source ~/.zplug/init.zsh
 zplug "modules/prompt", from:prezto
 zplug 'asdf-vm/asdf'
 
+zplug "atusy/gh-fzf"
+
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
