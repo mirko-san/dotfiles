@@ -8,6 +8,9 @@
 [core]
   editor = vim
 
+[rebase]
+  autosquash = true
+
 [init]
   defaultBranch = main
 
