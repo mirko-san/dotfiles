@@ -1,3 +1,13 @@
+# 分割ファイルの読み込み
+ZSHHOME="${HOME}/.zsh"
+
+if [ -d $ZSHHOME -a -r $ZSHHOME -a -x $ZSHHOME ]; then
+    for i in $ZSHHOME/*; do
+        [[ ${i##*/} = *.zsh ]] &&
+            [ \( -f $i -o -h $i \) -a -r $i ] && . $i
+    done
+fi
+
 source $ZPLUG_HOME/init.zsh
 
 zplug 'asdf-vm/asdf'
@@ -22,15 +32,5 @@ zplug load --verbose
 
 source $ZPLUG_REPOS/asdf-vm/asdf/asdf.sh
 source $ZPLUG_REPOS/asdf-vm/asdf/completions/asdf.bash
-
-# 分割ファイルの読み込み
-ZSHHOME="${HOME}/.zsh"
-
-if [ -d $ZSHHOME -a -r $ZSHHOME -a -x $ZSHHOME ]; then
-    for i in $ZSHHOME/*; do
-        [[ ${i##*/} = *.zsh ]] &&
-            [ \( -f $i -o -h $i \) -a -r $i ] && . $i
-    done
-fi
 
 eval "$(starship init zsh)"
