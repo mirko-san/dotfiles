@@ -9,7 +9,11 @@
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
   "editor.tabCompletion": "onlySnippets",
-  "editor.quickSuggestions": true,
+  "editor.quickSuggestions": {
+    "comments": "on",
+    "strings": "on",
+    "other": "on"
+  },
   "editor.tabSize": 2,
   "explorer.confirmDelete": false,
   "files.eol": "\n",
