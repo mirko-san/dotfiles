@@ -18,6 +18,7 @@ zplug "zsh-users/zsh-autosuggestions"
 # コマンドを種類ごとに色付け
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "atusy/gh-fzf"
+zplug "migutw42/zsh-fzf-ghq"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then

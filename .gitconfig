@@ -30,3 +30,6 @@
 
 [push]
   default = nothing
+
+[ghq]
+	root = ~/Documents/work/
