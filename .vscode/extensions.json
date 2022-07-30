@@ -4,7 +4,6 @@
   // List of extensions which should be recommended for users of this workspace.
   "recommendations": [
     "formulahendry.auto-rename-tag",
-    "coenraads.bracket-pair-colorizer",
     "ms-ceintl.vscode-language-pack-ja",
     "xabikos.javascriptsnippets",
     "ms-vscode-remote.remote-ssh",
