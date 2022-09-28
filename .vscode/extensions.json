@@ -9,7 +9,6 @@
     "ms-vscode-remote.remote-ssh",
     "ms-vscode-remote.remote-ssh-edit",
     "wayou.vscode-todo-highlight",
-    "jcbuisson.vue",
     "dbaeumer.vscode-eslint",
     "donjayamanne.githistory",
     "eamodio.gitlens",
@@ -21,8 +20,11 @@
     "visualstudioexptteam.vscodeintellicode",
     "redhat.vscode-yaml",
     "mosapride.zenkaku",
-    "oderwat.indent-rainbow",
-    "wmaurer.change-case"
+    "wmaurer.change-case",
+    "vue.volar",
+    "streetsidesoftware.code-spell-checker",
+    "bierner.emojisense",
+    "oderwat.indent-rainbow"
   ],
   // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
   "unwantedRecommendations": []
