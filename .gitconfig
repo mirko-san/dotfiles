@@ -15,7 +15,7 @@
   defaultBranch = main
 
 [alias]
-  push-f = push --force-with-lease
+  push-f = push --force-with-lease  --force-if-includes
   show-tag = describe --tag --abbrev=0
   # rebase したときにマージコミットを消さないようにする
   # https://git-scm.com/docs/git-rebase#Documentation/git-rebase.txt--r
