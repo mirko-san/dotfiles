@@ -1,0 +1,32 @@
+[user]
+  email = 41379069+mirko-san@users.noreply.github.com
+  name = mirko-san
+
+[log]
+  date = iso
+
+[core]
+  editor = vim
+
+[rebase]
+  autosquash = true
+
+[init]
+  defaultBranch = main
+
+[alias]
+  push-f = push --force-with-lease  --force-if-includes
+  show-tag = describe --tag --abbrev=0
+  # rebase したときにマージコミットを消さないようにする
+  # https://git-scm.com/docs/git-rebase#Documentation/git-rebase.txt--r
+  rebase-r = rebase -r
+  version-tags = tag -l --sort=-v:refname
+  delete-merged-branch = "!f () { git checkout $1; git branch --merged|egrep -v '\\*|develop|main'|xargs git branch -d; };f"
+  # 外部コマンドを実行するためにコマンドの先頭に ! をつける
+  branch-ref = "!git for-each-ref --sort=-committerdate --format='%(color:yellow)%(refname:short)%(color:reset) %(subject)' refs/heads/"
+
+[include]
+  path = ~/.gitconfig.work
+
+[push]
+  default = nothing
