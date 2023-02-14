@@ -37,6 +37,12 @@ zinit ice as"program" from"gh-r" \
   bpick"fzf-*-linux_amd64.tar.gz"
 zinit light junegunn/fzf
 
+zinit ice as"program" from"gh-r" \
+  pick"kustomize" \
+  ver"kustomize/v4.5.7" \
+  bpick"kustomize_*_darwin_amd64.tar.gz"
+zinit light kubernetes-sigs/kustomize
+
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 
