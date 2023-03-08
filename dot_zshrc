@@ -59,6 +59,11 @@ zinit ice as"program" from"gh-r" \
   bpick"kustomize_*_darwin_amd64.tar.gz"
 zinit light kubernetes-sigs/kustomize
 
+zinit ice as"program" from"gh-r" \
+  pick"gh_*/bin/gh" \
+  bpick"gh_*_macOS_amd64.tar.gz"
+zinit light cli/cli
+
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 
