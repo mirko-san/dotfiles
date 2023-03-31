@@ -64,6 +64,12 @@ if [[ $(uname) == "Darwin" && $(uname -m) == "x86_64" ]]; then
     pick"gh_*/bin/gh" \
     bpick"gh_*_macOS_amd64.tar.gz"
   zinit light cli/cli
+
+  zinit ice as"program" from"gh-r" \
+    pick"jsonnet" \
+    pick"jsonnetfmt" \
+    bpick"go-jsonnet_*_Darwin_x86_64.tar.gz"
+  zinit light google/go-jsonnet
 fi
 
 zinit light zsh-users/zsh-completions
