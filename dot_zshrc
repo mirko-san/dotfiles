@@ -48,21 +48,23 @@ zinit ice as"program" from"gh-r" \
   bpick"jq-linux64"
 zinit light stedolan/jq
 
-zinit ice as"program" from"gh-r" \
-  pick"fzf" \
-  bpick"fzf-*-linux_amd64.tar.gz"
-zinit light junegunn/fzf
+if [[ $(uname) == "Darwin" && $(uname -m) == "x86_64" ]]; then
+  zinit ice as"program" from"gh-r" \
+    pick"fzf" \
+    bpick"fzf-*-darwin_amd64.zip"
+  zinit light junegunn/fzf
 
-zinit ice as"program" from"gh-r" \
-  pick"kustomize" \
-  ver"kustomize/v4.5.7" \
-  bpick"kustomize_*_darwin_amd64.tar.gz"
-zinit light kubernetes-sigs/kustomize
+  zinit ice as"program" from"gh-r" \
+    pick"kustomize" \
+    ver"kustomize/v4.5.7" \
+    bpick"kustomize_*_darwin_amd64.tar.gz"
+  zinit light kubernetes-sigs/kustomize
 
-zinit ice as"program" from"gh-r" \
-  pick"gh_*/bin/gh" \
-  bpick"gh_*_macOS_amd64.tar.gz"
-zinit light cli/cli
+  zinit ice as"program" from"gh-r" \
+    pick"gh_*/bin/gh" \
+    bpick"gh_*_macOS_amd64.tar.gz"
+  zinit light cli/cli
+fi
 
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
