@@ -70,6 +70,11 @@ if [[ $(uname) == "Darwin" && $(uname -m) == "x86_64" ]]; then
     pick"jsonnetfmt" \
     bpick"go-jsonnet_*_Darwin_x86_64.tar.gz"
   zinit light google/go-jsonnet
+
+  zinit ice as"program" from"gh-r" \
+    pick"bin/darwin_amd64/kubelogin" \
+    bpick"kubelogin-darwin-amd64.zip"
+  zinit light Azure/kubelogin
 fi
 
 zinit light zsh-users/zsh-completions
