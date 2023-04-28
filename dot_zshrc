@@ -60,6 +60,14 @@ if [[ $(uname) == "Darwin" && $(uname -m) == "x86_64" ]]; then
     bpick"kustomize_*_darwin_amd64.tar.gz"
   zinit light kubernetes-sigs/kustomize
 
+  # golang が必要
+  zinit ice as"program" \
+    atclone"cd helm" \
+    atpull"%atclone" \
+    make \
+    pick"bin/helm"
+  zinit light helm/helm
+
   zinit ice as"program" from"gh-r" \
     pick"gh_*/bin/gh" \
     bpick"gh_*_macOS_amd64.tar.gz"
