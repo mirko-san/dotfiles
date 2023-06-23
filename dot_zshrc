@@ -46,7 +46,7 @@ zinit ice as"program" from"gh-r" \
   mv"jq-* -> jq" \
   pick"jq" \
   bpick"jq-linux64"
-zinit light stedolan/jq
+zinit light jqlang/jq
 
 if [[ $(uname) == "Darwin" && $(uname -m) == "x86_64" ]]; then
   zinit ice as"program" from"gh-r" \
