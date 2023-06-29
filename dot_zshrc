@@ -90,6 +90,11 @@ if [[ $(uname) == "Darwin" && $(uname -m) == "x86_64" ]]; then
     pick"bin/darwin_amd64/kubelogin" \
     bpick"kubelogin-darwin-amd64.zip"
   zinit light Azure/kubelogin
+elif [[ $(uname) == "Linux" && $(uname -m) == "x86_64" ]]; then
+  zinit ice as"program" from"gh-r" \
+    pick"fzf" \
+    bpick"fzf-*-linux_amd64.tar.gz"
+  zinit light junegunn/fzf
 fi
 
 zinit light zsh-users/zsh-completions
