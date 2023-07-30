@@ -46,13 +46,13 @@ export AQUA_GLOBAL_CONFIG=${AQUA_GLOBAL_CONFIG:-}:${XDG_CONFIG_HOME:-$HOME/.conf
 
 zinit light asdf-vm/asdf
 
-zinit ice as"program" from"gh-r" \
-  mv"jq-* -> jq" \
-  pick"jq" \
-  bpick"jq-linux64"
-zinit light jqlang/jq
-
 if [[ $(uname) == "Darwin" && $(uname -m) == "x86_64" ]]; then
+  zinit ice as"program" from"gh-r" \
+    mv"jq-* -> jq" \
+    pick"jq" \
+    bpick"jq-osx-amd64"
+  zinit light jqlang/jq
+
   zinit ice as"program" from"gh-r" \
     pick"fzf" \
     bpick"fzf-*-darwin_amd64.zip"
