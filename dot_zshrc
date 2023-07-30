@@ -42,6 +42,8 @@ zinit light-mode for \
 ### Start original custom
 eval "$(starship init zsh)"
 
+export AQUA_GLOBAL_CONFIG=${AQUA_GLOBAL_CONFIG:-}:${XDG_CONFIG_HOME:-$HOME/.config}/aquaproj-aqua/aqua.yaml
+
 zinit light asdf-vm/asdf
 
 zinit ice as"program" from"gh-r" \
