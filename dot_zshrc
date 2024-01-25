@@ -106,3 +106,5 @@ zinit load atusy/gh-fzf
 zinit load migutw42/zsh-fzf-ghq
 
 export PATH=$HOME/bin:$PATH
+
+alias untar='tar --one-top-level -x -f'
