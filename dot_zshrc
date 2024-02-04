@@ -108,6 +108,12 @@ elif [[ $(uname) == "Linux" && $(uname -m) == "x86_64" ]]; then
     pick"gh_*/bin/gh" \
     bpick"gh_*_linux_amd64.tar.gz"
   zinit light cli/cli
+
+  zinit ice as"program" from"gh-r" \
+    mv"ghq_linux_amd64/ghq -> ghq" \
+    pick"ghq" \
+    bpick"ghq_linux_amd64.zip"
+  zinit light x-motemen/ghq
 fi
 
 zinit light zsh-users/zsh-completions
@@ -119,3 +125,6 @@ zinit load migutw42/zsh-fzf-ghq
 export PATH=$HOME/bin:$PATH
 
 alias untar='tar --one-top-level -x -f'
+
+export DENO_INSTALL="/home/mirko/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
