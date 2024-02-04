@@ -69,14 +69,6 @@ if [[ $(uname) == "Darwin" && $(uname -m) == "x86_64" ]]; then
     bpick"kubeseal-*-darwin-amd64.tar.gz"
   zinit light bitnami-labs/sealed-secrets
 
-  # golang が必要
-  zinit ice as"program" \
-    atclone"cd helm" \
-    atpull"%atclone" \
-    make \
-    pick"bin/helm"
-  zinit light helm/helm
-
   zinit ice as"program" from"gh-r" \
     pick"gh_*/bin/gh" \
     bpick"gh_*_macOS_amd64.tar.gz"
@@ -115,6 +107,14 @@ elif [[ $(uname) == "Linux" && $(uname -m) == "x86_64" ]]; then
     bpick"ghq_linux_amd64.zip"
   zinit light x-motemen/ghq
 fi
+
+# golang が必要
+zinit ice as"program" \
+  atclone"cd helm" \
+  atpull"%atclone" \
+  make \
+  pick"bin/helm"
+zinit light helm/helm
 
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
