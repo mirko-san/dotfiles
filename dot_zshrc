@@ -97,6 +97,11 @@ elif [[ $(uname) == "Linux" && $(uname -m) == "x86_64" ]]; then
   zinit light kubernetes-sigs/kustomize
 
   zinit ice as"program" from"gh-r" \
+    pick"helmfile_*/helmfile" \
+    bpick"helmfile*_linux_amd64.tar.gz"
+  zinit light helmfile/helmfile
+
+  zinit ice as"program" from"gh-r" \
     pick"gh_*/bin/gh" \
     bpick"gh_*_linux_amd64.tar.gz"
   zinit light cli/cli
