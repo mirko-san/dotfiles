@@ -10,6 +10,9 @@ call plug#begin()
 " Make sure you use single quotes
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+Plug 'vim-denops/denops.vim'
+Plug 'vim-denops/denops-helloworld.vim'
+
 Plug 'nvim-lualine/lualine.nvim'
 " If you want to have icons in your statusline choose one of these
 Plug 'nvim-tree/nvim-web-devicons'
