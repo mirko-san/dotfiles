@@ -10,9 +10,16 @@ call plug#begin()
 " Make sure you use single quotes
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+Plug 'nvim-lualine/lualine.nvim'
+" If you want to have icons in your statusline choose one of these
+Plug 'nvim-tree/nvim-web-devicons'
+
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
 call plug#end()
 
 set number
 
+lua << END
+require('lualine').setup()
+END
