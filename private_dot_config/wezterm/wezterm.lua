@@ -1,6 +1,11 @@
 -- Pull in the wezterm API
 local wezterm = require 'wezterm'
 
+font = wezterm.font_with_fallback({
+ { family = "HackGen Console" },
+ { family = "HackGen Console NF", assume_emoji_presentation = true },
+})
+
 -- This table will hold the configuration.
 local config = {}
 
@@ -11,6 +16,11 @@ if wezterm.config_builder then
 end
 
 -- This is where you actually apply your config choices
+
+-- フォントサイズの設定
+config.font_size = 16
+-- リガチャを無効に
+config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 
 config.macos_forward_to_ime_modifier_mask = 'SHIFT|CTRL'
 
