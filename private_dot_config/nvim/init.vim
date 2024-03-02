@@ -15,4 +15,5 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 set number
-
+:set list
+set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,space:_
