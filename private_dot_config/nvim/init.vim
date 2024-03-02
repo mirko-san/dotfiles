@@ -10,6 +10,8 @@ call plug#begin()
 " Make sure you use single quotes
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+Plug 'folke/tokyonight.nvim'
+
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
 call plug#end()
@@ -17,3 +19,5 @@ call plug#end()
 set number
 :set list
 set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,space:_
+
+colorscheme tokyonight
