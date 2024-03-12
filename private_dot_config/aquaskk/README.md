@@ -1,6 +1,6 @@
 # Usage
 
-Aqua SKK 4.5.7 のとき、設定ファイルは `~/Library/Application\ Support/AquaSKK` を参照している。
+Aqua SKK 4.7.5 のとき、設定ファイルは `~/Library/Application\ Support/AquaSKK` を参照している。
 初回のみ `chezmoi apply` を実行したのちに以下を実行すること。
 
 ```
