@@ -2,8 +2,8 @@
 local wezterm = require 'wezterm'
 
 font = wezterm.font_with_fallback({
- { family = "HackGen Console" },
- { family = "HackGen Console NF", assume_emoji_presentation = true },
+  { family = "HackGen Console" },
+  { family = "HackGen Console NF", assume_emoji_presentation = true },
 })
 
 -- This table will hold the configuration.
@@ -30,4 +30,3 @@ end
 
 -- and finally, return the configuration to wezterm
 return config
-
