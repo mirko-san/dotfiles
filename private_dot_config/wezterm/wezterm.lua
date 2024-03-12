@@ -25,7 +25,9 @@ config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 config.macos_forward_to_ime_modifier_mask = 'SHIFT|CTRL'
 
 if wezterm.target_triple == 'x86_64-apple-darwin' then
-  { mods = "CTRL", key = "q", action=wezterm.action{ SendString="\x11" } },
+  config.keys = {
+    { mods = "CTRL", key = "q", action=wezterm.action{ SendString="\x11" } },
+  }
 end
 
 -- and finally, return the configuration to wezterm
