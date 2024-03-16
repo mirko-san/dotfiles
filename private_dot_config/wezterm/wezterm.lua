@@ -22,6 +22,12 @@ config.font_size = 16
 -- リガチャを無効に
 config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 
+-- WIndowsのときのみの設定
+-- https://wezfurlong.org/wezterm/config/lua/wezterm/target_triple.html
+if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
+  config.default_prog = { 'bash' }
+end
+
 config.macos_forward_to_ime_modifier_mask = 'SHIFT|CTRL'
 
 if wezterm.target_triple == 'x86_64-apple-darwin' then
