@@ -96,6 +96,13 @@ if [[ $(uname) == "Darwin" && $(uname -m) == "x86_64" ]]; then
     pick"ghq" \
     bpick"ghq_darwin_amd64.zip"
   zinit light x-motemen/ghq
+
+  zinit ice as"program" from"gh-r" \
+    mv"direnv* -> direnv" \
+    pick"direnv" \
+    bpick"direnv.darwin-amd64"
+  zinit light direnv/direnv
+
 elif [[ $(uname) == "Linux" && $(uname -m) == "x86_64" ]]; then
   zinit ice as"program" from"gh-r" \
     pick"fzf" \
