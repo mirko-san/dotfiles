@@ -90,6 +90,12 @@ if [[ $(uname) == "Darwin" && $(uname -m) == "x86_64" ]]; then
     pick"sops" \
     bpick"sops-*.darwin.amd64"
   zinit light getsops/sops
+
+  zinit ice as"program" from"gh-r" \
+    mv"ghq_darwin_amd64/ghq -> ghq" \
+    pick"ghq" \
+    bpick"ghq_darwin_amd64.zip"
+  zinit light x-motemen/ghq
 elif [[ $(uname) == "Linux" && $(uname -m) == "x86_64" ]]; then
   zinit ice as"program" from"gh-r" \
     pick"fzf" \
