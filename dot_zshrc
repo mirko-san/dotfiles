@@ -84,6 +84,12 @@ if [[ $(uname) == "Darwin" && $(uname -m) == "x86_64" ]]; then
     pick"bin/darwin_amd64/kubelogin" \
     bpick"kubelogin-darwin-amd64.zip"
   zinit light Azure/kubelogin
+
+  zinit ice as"program" from"gh-r" \
+    mv"sops-* -> sops" \
+    pick"sops" \
+    bpick"sops-*.darwin.amd64"
+  zinit light getsops/sops
 elif [[ $(uname) == "Linux" && $(uname -m) == "x86_64" ]]; then
   zinit ice as"program" from"gh-r" \
     pick"fzf" \
