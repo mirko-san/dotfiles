@@ -26,3 +26,7 @@ set shiftwidth=0
 set softtabstop=-1
 
 colorscheme tokyonight
+
+inoremap ( ()<Left>
+inoremap { {}<Left>
+inoremap [ []<Left>
