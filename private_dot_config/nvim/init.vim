@@ -17,7 +17,7 @@ Plug 'folke/tokyonight.nvim'
 call plug#end()
 
 set number
-:set list
+set list
 set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,space:_
 
 colorscheme tokyonight
