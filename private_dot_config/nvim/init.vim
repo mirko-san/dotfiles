@@ -20,4 +20,9 @@ set number
 set list
 set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,space:_
 
+set tabstop=2
+set shiftwidth=0
+" tabstop に従う
+set softtabstop=-1
+
 colorscheme tokyonight
