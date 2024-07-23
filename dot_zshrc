@@ -42,7 +42,6 @@ zinit light-mode for \
 ### Start original custom
 eval "$(starship init zsh)"
 
-zinit light asdf-vm/asdf
 
 if [[ $(uname) == "Darwin" && $(uname -m) == "x86_64" ]]; then
   export AQUA_GLOBAL_CONFIG=${AQUA_GLOBAL_CONFIG:-}:${XDG_CONFIG_HOME:-$HOME/.config}/aquaproj-aqua/aqua.yaml
@@ -103,6 +102,9 @@ if [[ $(uname) == "Darwin" && $(uname -m) == "x86_64" ]]; then
     pick"direnv" \
     bpick"direnv.darwin-amd64"
   zinit light direnv/direnv
+
+  # brew で入れたときの asdf の設定
+  . /usr/local/opt/asdf/libexec/asdf.sh
 
 elif [[ $(uname) == "Linux" && $(uname -m) == "x86_64" ]]; then
   zinit ice as"program" from"gh-r" \
