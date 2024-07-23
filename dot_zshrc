@@ -43,6 +43,7 @@ zinit light-mode for \
 eval "$(starship init zsh)"
 
 export AQUA_GLOBAL_CONFIG=${AQUA_GLOBAL_CONFIG:-}:${XDG_CONFIG_HOME:-$HOME/.config}/aquaproj-aqua/aqua.yaml
+export PATH="$(aqua root-dir)/bin:$PATH"
 
 zinit light asdf-vm/asdf
 
