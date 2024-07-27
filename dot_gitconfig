@@ -31,3 +31,11 @@
 
 [color]
   branch = true
+
+# "go get" は https で通信しようとするので ssh を強制する
+# https://go.dev/doc/faq#git_https
+[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/
+
+[url "git@github.com/"]
+  insteadOf = https://github.com/

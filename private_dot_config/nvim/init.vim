@@ -10,7 +10,7 @@ call plug#begin()
 " Make sure you use single quotes
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'folke/tokyonight.nvim'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
@@ -25,7 +25,7 @@ set shiftwidth=0
 " tabstop に従う
 set softtabstop=-1
 
-colorscheme tokyonight
+colorscheme catppuccin " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 
 inoremap ( ()<Left>
 inoremap { {}<Left>
