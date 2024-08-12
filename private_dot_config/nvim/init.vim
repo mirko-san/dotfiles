@@ -12,6 +12,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
+let g:coc_global_extensions = [
+  \ 'coc-tsserver'
+  \, 'coc-json'
+  \, ]
+
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
 call plug#end()
