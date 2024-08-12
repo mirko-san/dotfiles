@@ -12,14 +12,21 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
+Plug 'rust-lang/rust.vim'
+let g:rustfmt_autosave = 1
+
 let g:coc_global_extensions = [
-  \ 'coc-tsserver'
+  \  'coc-rust-analyzer'
+  \, 'coc-tsserver'
   \, 'coc-json'
   \, ]
 
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
 call plug#end()
+
+syntax enable
+filetype plugin indent on
 
 set number
 set list

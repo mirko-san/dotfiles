@@ -6,6 +6,7 @@
       "trace.server": "verbose",
       "filetypes": ["go"]
     }
-  }
+  },
+  "rust-analyzer.server.path": "/usr/lib/rustup/bin"
 }
 
