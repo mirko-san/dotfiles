@@ -131,6 +131,10 @@ elif [[ $(uname) == "Linux" && $(uname -m) == "x86_64" ]]; then
     pick"ghq" \
     bpick"ghq_linux_amd64.zip"
   zinit light x-motemen/ghq
+
+  . ~/.asdf/plugins/golang/set-env.zsh
+  . /opt/asdf-vm/asdf.sh
+  export PATH=$GOPATH/bin:$PATH
 fi
 
 # golang が必要
