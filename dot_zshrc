@@ -141,6 +141,9 @@ elif [[ $(uname) == "Linux" && $(uname -m) == "x86_64" ]]; then
   . ~/.asdf/plugins/golang/set-env.zsh
   . /opt/asdf-vm/asdf.sh
   export PATH=$GOPATH/bin:$PATH
+
+  alias docker='podman'
+  export DOCKER_HOST="unix://$(podman info --format '{{.Host.RemoteSocket.Path}}')"
 fi
 
 # golang が必要
