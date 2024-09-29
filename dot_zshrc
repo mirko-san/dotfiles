@@ -106,6 +106,12 @@ if [[ $(uname) == "Darwin" && $(uname -m) == "x86_64" ]]; then
 
 elif [[ $(uname) == "Linux" && $(uname -m) == "x86_64" ]]; then
   zinit ice as"program" from"gh-r" \
+    mv"jq-* -> jq" \
+    pick"jq" \
+    bpick"jq-linux-amd64"
+  zinit light jqlang/jq
+
+  zinit ice as"program" from"gh-r" \
     pick"fzf" \
     bpick"fzf-*-linux_amd64.tar.gz"
   zinit light junegunn/fzf
