@@ -40,13 +40,20 @@ zinit light-mode for \
 ### Start original custom
 eval "$(starship init zsh)"
 
-
 if [[ $(uname) == "Darwin" && $(uname -m) == "x86_64" ]]; then
   export AQUA_GLOBAL_CONFIG=${AQUA_GLOBAL_CONFIG:-}:${XDG_CONFIG_HOME:-$HOME/.config}/aquaproj-aqua/aqua.yaml
   export PATH="$(aqua root-dir)/bin:$PATH"
 
   notify() {
     osascript -e "display notification \"$1\""
+  }
+
+  kube_pods() {
+    kubectl get pod -o json \
+      | jq -r "{ \
+          running : [.items[] | select(.status.phase == \"Running\")] | length, \
+          total: [.items[] | select(.status.phase == \"Succeeded\" | not)] | length \
+        }"
   }
 
   zinit ice as"program" from"gh-r" \
