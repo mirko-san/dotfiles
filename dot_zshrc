@@ -13,10 +13,8 @@ source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
-### "command not found: compdef" 対策
-autoload -Uz compinit
-compinit
-###
+# initialise completions with ZSH's compinit
+autoload -Uz compinit && compinit
 
 ### 分割ファイルの読み込み
 ZSHHOME="${HOME}/.zsh"
@@ -42,11 +40,21 @@ zinit light-mode for \
 ### Start original custom
 eval "$(starship init zsh)"
 
-zinit light asdf-vm/asdf
-
 if [[ $(uname) == "Darwin" && $(uname -m) == "x86_64" ]]; then
   export AQUA_GLOBAL_CONFIG=${AQUA_GLOBAL_CONFIG:-}:${XDG_CONFIG_HOME:-$HOME/.config}/aquaproj-aqua/aqua.yaml
   export PATH="$(aqua root-dir)/bin:$PATH"
+
+  notify() {
+    osascript -e "display notification \"$1\""
+  }
+
+  kube_pods() {
+    kubectl get pod -o json \
+      | jq -r "{ \
+          running : [.items[] | select(.status.phase == \"Running\")] | length, \
+          total: [.items[] | select(.status.phase == \"Succeeded\" | not)] | length \
+        }"
+  }
 
   zinit ice as"program" from"gh-r" \
     mv"jq-* -> jq" \
@@ -103,6 +111,9 @@ if [[ $(uname) == "Darwin" && $(uname -m) == "x86_64" ]]; then
     pick"direnv" \
     bpick"direnv.darwin-amd64"
   zinit light direnv/direnv
+
+  # brew で入れたときの asdf の設定
+  . /usr/local/opt/asdf/libexec/asdf.sh
 
 elif [[ $(uname) == "Linux" && $(uname -m) == "x86_64" ]]; then
   zinit ice as"program" from"gh-r" \
