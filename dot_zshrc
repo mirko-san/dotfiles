@@ -80,7 +80,7 @@ if [[ $(uname) == "Darwin" && $(uname -m) == "x86_64" ]]; then
 
   zinit ice as"program" from"gh-r" \
     pick"gh_*/bin/gh" \
-    bpick"gh_*_macOS_amd64.tar.gz"
+    bpick"gh_*_macOS_amd64.zip"
   zinit light cli/cli
 
   zinit ice as"program" from"gh-r" \
