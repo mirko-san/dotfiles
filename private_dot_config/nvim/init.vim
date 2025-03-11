@@ -9,6 +9,7 @@ call plug#begin()
 
 " Make sure you use single quotes
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'lambdalisue/fern.vim'
 
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
@@ -42,3 +43,11 @@ colorscheme catppuccin " catppuccin-latte, catppuccin-frappe, catppuccin-macchia
 inoremap ( ()<Left>
 inoremap { {}<Left>
 inoremap [ []<Left>
+
+""" Fern
+" Show hidden files
+let g:fern#default_hidden=1
+
+" Show file tree with Ctrl+n
+nnoremap <C-n> :Fern . -reveal=% -drawer -toggle -width=40<CR>
+
