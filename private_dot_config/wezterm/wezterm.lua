@@ -1,5 +1,6 @@
 -- Pull in the wezterm API
 local wezterm = require 'wezterm'
+local act = wezterm.action
 
 font = wezterm.font_with_fallback({
   { family = "HackGen Console" },
@@ -35,6 +36,22 @@ if wezterm.target_triple == 'x86_64-apple-darwin' then
     { mods = "CTRL", key = "q", action=wezterm.action{ SendString="\x11" } },
   }
 end
+
+-- https://wezfurlong.org/wezterm/config/mouse.html#gotcha-on-binding-an-up-event-only
+config.mouse_bindings = {
+  -- Bind 'Up' event of CTRL-Click to open hyperlinks
+  {
+    event = { Up = { streak = 1, button = 'Left' } },
+    mods = 'CTRL',
+    action = act.OpenLinkAtMouseCursor,
+  },
+  -- Disable the 'Down' event of CTRL-Click to avoid weird program behaviors
+  {
+    event = { Down = { streak = 1, button = 'Left' } },
+    mods = 'CTRL',
+    action = act.Nop,
+  },
+}
 
 -- and finally, return the configuration to wezterm
 return config
