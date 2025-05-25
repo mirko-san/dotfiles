@@ -34,6 +34,7 @@ set number
 set list
 set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,space:_
 
+set autoindent " 新しい行のインデントを前の行に合わせる
 set tabstop=2
 set shiftwidth=0
 " tabstop に従う
