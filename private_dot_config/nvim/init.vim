@@ -10,6 +10,10 @@ call plug#begin()
 " Make sure you use single quotes
 Plug 'neovim/nvim-lspconfig'
 
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/vim-vsnip'
+
 Plug 'lambdalisue/fern.vim'
 
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
@@ -43,6 +47,9 @@ inoremap [ []<Left>
 
 """ nvim-lspconfig
 lua require'lspconfig'.gopls.setup{}
+
+""" nvim-cmp
+lua require('plugins.nvim-cmp').setup()
 
 """ Fern
 " Show hidden files
