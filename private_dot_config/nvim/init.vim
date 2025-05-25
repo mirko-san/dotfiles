@@ -8,6 +8,8 @@ call plug#begin()
 "   - Avoid using standard Vim directory names like 'plugin'
 
 " Make sure you use single quotes
+Plug 'neovim/nvim-lspconfig'
+
 Plug 'lambdalisue/fern.vim'
 
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
@@ -38,6 +40,9 @@ colorscheme catppuccin " catppuccin-latte, catppuccin-frappe, catppuccin-macchia
 inoremap ( ()<Left>
 inoremap { {}<Left>
 inoremap [ []<Left>
+
+""" nvim-lspconfig
+lua require'lspconfig'.gopls.setup{}
 
 """ Fern
 " Show hidden files
