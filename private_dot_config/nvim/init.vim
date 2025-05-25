@@ -15,6 +15,8 @@ Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'rust-lang/rust.vim'
 let g:rustfmt_autosave = 1
 
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
 call plug#end()
@@ -44,3 +46,5 @@ let g:fern#default_hidden=1
 " Show file tree with Ctrl+n
 nnoremap <C-n> :Fern . -reveal=% -drawer -toggle -width=40<CR>
 
+""" nvim-treesitter
+lua require('plugins.treesitter')
