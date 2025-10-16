@@ -115,6 +115,11 @@ if [[ $(uname) == "Darwin" && $(uname -m) == "x86_64" ]]; then
     bpick"direnv.darwin-amd64"
   zinit light direnv/direnv
 
+  zinit ice as"program" from"gh-r" \
+    pick"otel-tui_Darwin_x86_64/otel-tui" \
+    bpick"otel-tui_Darwin_x86_64.tar.gz"
+  zinit light ymtdzzz/otel-tui
+
   # brew で入れたときの asdf の設定
   . /usr/local/opt/asdf/libexec/asdf.sh
 
